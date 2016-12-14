@@ -7,7 +7,7 @@ import { State } from './state';
 async function readFiles(context: PaeckchenContext, files: string[], suffix: string): Promise<(string|undefined)[]> {
   return await Promise.all(files.map(async path => {
     try {
-      return context.host.readFile(`${path}${suffix}`);
+      return await context.host.readFile(`${path}${suffix}`);
     } catch (e) {
       return undefined;
     }
