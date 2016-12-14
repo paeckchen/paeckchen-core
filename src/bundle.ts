@@ -136,10 +136,10 @@ export function rebundleFactory(state: State, paeckchenAst: ESTree.Program, cont
     if (timer) {
       clearTimeout(timer);
     }
-    timer = setTimeout(() => {
+    timer = setTimeout(async () => {
       try {
         context.logger.trace('bundle', `rebundle`);
-        bundleFunction(state, paeckchenAst, context, outputFunction);
+        await bundleFunction(state, paeckchenAst, context, outputFunction);
       } catch (e) {
         outputFunction(e, context);
       }
