@@ -1,10 +1,10 @@
 import * as acorn from 'acorn';
+import { FSWatcher as Chokidar } from 'chokidar';
 import { oneLine } from 'common-tags';
 import { generate as escodegenGenerate } from 'escodegen';
 import * as ESTree from 'estree';
 import { merge } from 'lodash';
 import { resolve } from 'path';
-import { FSWatcher as Chokidar } from 'chokidar';
 import { runInNewContext } from 'vm';
 
 import { Host } from '../src/host';
