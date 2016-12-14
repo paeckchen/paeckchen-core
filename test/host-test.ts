@@ -29,7 +29,7 @@ test('DefaultHost#isFile should return true for file', async t => {
 });
 
 test('DefaultHost#isFile should return false for directory', async t => {
-  const result = await (t.context.host as DefaultHost).isFile('./node_modules');
+  const result = await (t.context.host as DefaultHost).isFile('./src');
 
   t.false(result);
 });

@@ -1,8 +1,10 @@
-module.exports = function (wallaby) {
+module.exports = function (w) {
   return {
     files: [
       'src/**/*.ts*',
-      'test/helper.ts'
+      { pattern: 'test/helper.ts', instrument: false },
+      { pattern: 'test/fixtures/**', instrument: false },
+      { pattern: 'package.json', instrument: false }
     ],
     tests: [
       'test/**/*-test.ts*'
@@ -11,6 +13,6 @@ module.exports = function (wallaby) {
       type: 'node'
     },
     testFramework: 'ava',
-    debug: true
+    debug: false
   };
 };

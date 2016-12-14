@@ -4,11 +4,52 @@ import { generate as escodegenGenerate } from 'escodegen';
 import * as ESTree from 'estree';
 import { merge } from 'lodash';
 import { resolve } from 'path';
+import { FSWatcher as Chokidar } from 'chokidar';
 import { runInNewContext } from 'vm';
 
 import { Host } from '../src/host';
 import { FSWatcher } from '../src/watcher';
-import { ChokidarMock } from './watcher-test';
+
+export class ChokidarMock extends Chokidar {
+  public onCalls: string[] = [];
+  private onAdd: Function;
+  private onChange: Function;
+  private onUnlink: Function;
+  public addCalls: string[] = [];
+  public unwatchCalls: string[] = [];
+
+  public on(name: string, fn: Function): ChokidarMock {
+    this.onCalls.push(name);
+    if (name === 'add') {
+      this.onAdd = fn;
+    } else if (name === 'change') {
+      this.onChange = fn;
+    } else if (name === 'unlink') {
+      this.onUnlink = fn;
+    }
+    return this;
+  }
+
+  public emit(event: string, fileName: string): void {
+    if (event === 'add') {
+      this.onAdd(fileName);
+    } else if (event === 'change') {
+      this.onChange(fileName);
+    } else if (event === 'unlink') {
+      this.onUnlink(fileName);
+    }
+  }
+
+  public add(dir: string): ChokidarMock {
+    this.addCalls.push(dir);
+    return this;
+  }
+
+  public unwatch(dir: string): ChokidarMock {
+    this.unwatchCalls.push(dir);
+    return this;
+  }
+}
 
 export const errorLogger = {
   configure: () => undefined,

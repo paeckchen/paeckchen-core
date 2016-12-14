@@ -186,7 +186,7 @@ test.cb('bundle with source maps should add mappings via sorcery', t => {
   const paths = (list: string[]) => list.map(entry => entry.replace(/\\/g, '/'));
 
   const config: BundleOptions = {
-    entryPoint: './dist/test/fixtures/main.js',
+    entryPoint: './test/fixtures/fixturemain.js',
     sourceMap: true
   };
 
