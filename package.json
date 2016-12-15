@@ -64,7 +64,7 @@
     "typescript": "2.1.4"
   },
   "dependencies": {
-    "@types/acorn": "1.0.31",
+    "@types/acorn": "4.0.0",
     "@types/estree": "0.0.34",
     "acorn": "4.0.3",
     "ast-types": "0.9.3",
