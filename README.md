@@ -3,7 +3,6 @@
 [![license][license-image]][license-url]
 [![npm][npm-version-core-image]][npm-version-core-url]
 [![dep][daviddm-core-image]][daviddm-core-url]
-[![dev][daviddm-dev-core-image]][daviddm-dev-core-url]
 [![travis][travis-image]][travis-url]
 [![appveyor][appveyor-image]][appveyor-url]
 [![coveralls][coveralls-image]][coveralls-url]
@@ -30,7 +29,5 @@ Core library of [paeckchen](https://github.com/paeckchen/paeckchen).
 [npm-version-core-image]: https://img.shields.io/npm/v/paeckchen-core.svg
 [npm-version-core-url]: https://www.npmjs.com/package/paeckchen-core
 
-[daviddm-core-image]: https://david-dm.org/paeckchen/paeckchen-core/status.svg
+[daviddm-core-image]: https://img.shields.io/david/paeckchen/paeckchen-core.svg
 [daviddm-core-url]: https://david-dm.org/paeckchen/paeckchen-core
-[daviddm-dev-core-image]: https://david-dm.org/paeckchen/paeckchen-core/dev-status.svg
-[daviddm-dev-core-url]: https://david-dm.org/paeckchen/paeckchen-core?type=dev
