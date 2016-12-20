@@ -28,7 +28,7 @@
 [npm-version-core-image]: https://img.shields.io/npm/v/paeckchen-core.svg
 [npm-version-core-url]: https://www.npmjs.com/package/paeckchen-core
 
-[daviddm-core-image]: https://david-dm.org/paeckchen/paeckchen/status.svg?path=packages/paeckchen-core
-[daviddm-core-url]: https://david-dm.org/paeckchen/paeckchen?path=packages/paeckchen-core
-[daviddm-dev-core-image]: https://david-dm.org/paeckchen/paeckchen/dev-status.svg?path=packages/paeckchen-core
-[daviddm-dev-core-url]: https://david-dm.org/paeckchen/paeckchen?path=packages/paeckchen-core&type=dev
+[daviddm-core-image]: https://david-dm.org/paeckchen/paeckchen-core/status.svg
+[daviddm-core-url]: https://david-dm.org/paeckchen/paeckchen-core
+[daviddm-dev-core-image]: https://david-dm.org/paeckchen/paeckchen-core/dev-status.svg
+[daviddm-dev-core-url]: https://david-dm.org/paeckchen/paeckchen-core?type=dev
