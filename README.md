@@ -9,6 +9,8 @@
 [![coveralls][coveralls-image]][coveralls-url]
 [![commitizen][commitizen-image]][commitizen-url]
 
+Core library of [paeckchen](https://github.com/paeckchen/paeckchen).
+
 ---
 [license-image]: https://img.shields.io/github/license/paeckchen/paeckchen.svg
 [license-url]: https://github.com/paeckchen/paeckchen
