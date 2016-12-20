@@ -24,7 +24,7 @@
   },
   "tipi": {
     "version": "3.1.0",
-    "template": "../tipi-template-typescript/template/"
+    "template": "typescript"
   },
   "repository": {
     "type": "git",
