@@ -18,7 +18,7 @@ export class ChokidarMock extends Chokidar {
   public addCalls: string[] = [];
   public unwatchCalls: string[] = [];
 
-  public on(name: string, fn: Function): ChokidarMock {
+  public on(name: string, fn: Function): this {
     this.onCalls.push(name);
     if (name === 'add') {
       this.onAdd = fn;
@@ -40,13 +40,21 @@ export class ChokidarMock extends Chokidar {
     }
   }
 
-  public add(dir: string): ChokidarMock {
-    this.addCalls.push(dir);
+  public add(dir: string|string[]): ChokidarMock {
+    if (Array.isArray(dir)) {
+      dir.forEach(entry => this.addCalls.push(entry));
+    } else {
+      this.addCalls.push(dir);
+    }
     return this;
   }
 
-  public unwatch(dir: string): ChokidarMock {
-    this.unwatchCalls.push(dir);
+  public unwatch(dir: string|string[]): ChokidarMock {
+    if (Array.isArray(dir)) {
+      dir.forEach(entry => this.unwatchCalls.push(entry));
+    } else {
+      this.unwatchCalls.push(dir);
+    }
     return this;
   }
 }

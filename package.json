@@ -63,8 +63,9 @@
     "typescript": "2.1.4"
   },
   "dependencies": {
-    "@types/acorn": "4.0.0",
-    "@types/estree": "0.0.34",
+    "@types/acorn": "~4.0.0",
+    "@types/chokidar": "~1.4.30",
+    "@types/estree": "~0.0.34",
     "acorn": "4.0.4",
     "ast-types": "0.9.3",
     "browser-resolve": "1.11.2",
