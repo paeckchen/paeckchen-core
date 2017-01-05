@@ -21,7 +21,7 @@ export enum LogLevel {
 
 export interface Config {
   input: {
-    entryPoint: string|undefined;
+    entryPoint: string;
     source: SourceSpec;
   };
   output: {
@@ -132,7 +132,7 @@ export async function createConfig(options: BundleOptions, host: Host): Promise<
   // tslint:disable-next-line cyclomatic-complexity
   return {
     input: {
-      entryPoint: options.entryPoint || configFile.input && configFile.input.entry || undefined,
+      entryPoint: options.entryPoint || configFile.input && configFile.input.entry || 'index.js',
       source: getSource(options.source || configFile.input && configFile.input.source || 'es2015')
     },
     output: {

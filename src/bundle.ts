@@ -158,7 +158,7 @@ function createContext(config: Config, host: Host, options: BundleOptions): Paec
     logger: options.logger || new NoopLogger()
   };
   context.logger.configure(config);
-  if (!context.config.input.entryPoint) {
+  if (!host.fileExists(context.config.input.entryPoint)) {
     throw new Error('Missing entry-point');
   }
   if (context.config.watchMode) {
