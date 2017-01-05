@@ -13,7 +13,7 @@ test('createConfig should return the config defaults', async t => {
 
   t.deepEqual(config, {
     input: {
-      entryPoint: undefined,
+      entryPoint: 'index.js',
       source: SourceSpec.ES2015
     },
     output: {

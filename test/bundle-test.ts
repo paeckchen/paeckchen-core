@@ -87,7 +87,7 @@ test.cb('bundle should check for a config-file', t => {
       })
   }, '/');
 
-  bundle({}, host, (error, context, code) => {
+  bundle({entryPoint: '/entry-point.js'}, host, (error, context, code) => {
     if (error) {
       t.fail(error.message);
       return t.end();
