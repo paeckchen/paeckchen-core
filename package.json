@@ -54,7 +54,7 @@
     "cz-customizable": "4.0.0",
     "husky": "0.12.0",
     "lodash": "4.17.4",
-    "nyc": "10.0.0",
+    "nyc": "10.1.2",
     "rimraf": "2.5.4",
     "source-map-support": "0.4.10",
     "standard-version": "4.0.0",
