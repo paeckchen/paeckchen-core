@@ -24,9 +24,9 @@ export class State {
 
   private _wrappedModules: { [name: string]: WrappedModule } = {};
 
-  private _nextModuleIndex: number = 0;
+  private _nextModuleIndex = 0;
 
-  public moduleWatchCallbackAdded: boolean = false;
+  public moduleWatchCallbackAdded = false;
 
   public readonly moduleBundleQueue: string[] = [];
 
