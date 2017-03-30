@@ -19,7 +19,7 @@ export async function rewriteExportNamedDeclaration(program: ESTree.Program, cur
       exportAllUpdates.push([path.node.source.value as string, path]);
       return false;
     },
-    visitExportNamedDeclaration (path: Path<ESTree.ExportNamedDeclaration>): boolean {
+    visitExportNamedDeclaration(path: Path<ESTree.ExportNamedDeclaration>): boolean {
       if (path.node.declaration) {
         replaceExportNamedDeclaration(path);
       } else {
