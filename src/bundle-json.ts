@@ -17,7 +17,7 @@ export function buildValue(data: any): ESTree.ObjectExpression|ESTree.ArrayExpre
       }
       return buildObject(data);
   }
-};
+}
 
 export function buildObject(data: Object): ESTree.ObjectExpression {
   return b.objectExpression(
@@ -26,7 +26,7 @@ export function buildObject(data: Object): ESTree.ObjectExpression {
       return list;
     }, [])
   );
-};
+}
 
 export function buildArray(data: any[]): ESTree.ArrayExpression {
   return b.arrayExpression(

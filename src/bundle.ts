@@ -38,8 +38,8 @@ export interface PaeckchenContext {
   config: Config;
   host: Host;
   watcher?: Watcher;
-  rebundle?: () => void;
   logger: Logger;
+  rebundle?(): void;
 }
 
 function getModules(ast: ESTree.Program): ESTree.ArrayExpression {
@@ -78,7 +78,7 @@ export async function bundleChunks(step: ProgressStep, state: State, context: Pa
       }));
     await bundleChunks(step, state, context);
   }
-};
+}
 
 export type BundlingFunction = typeof executeBundling;
 /**
@@ -104,7 +104,7 @@ export function executeBundling(state: State, paeckchenAst: ESTree.Program, cont
   }
 
   Promise.resolve()
-    .then(async () => {
+    .then(async() => {
       await bundleChunks(ProgressStep.bundleModules, state, context);
       await injectGlobals(state, paeckchenAst, context);
       await bundleChunks(ProgressStep.bundleGlobals, state, context);
@@ -136,7 +136,7 @@ export function rebundleFactory(state: State, paeckchenAst: ESTree.Program, cont
     if (timer) {
       clearTimeout(timer);
     }
-    timer = setTimeout(async () => {
+    timer = setTimeout(async() => {
       try {
         context.logger.trace('bundle', `rebundle`);
         await bundleFunction(state, paeckchenAst, context, outputFunction);
@@ -171,7 +171,7 @@ export function bundle(options: BundleOptions, host: Host = new DefaultHost(), o
     bundleFunction: BundlingFunction = executeBundling,
       rebundleFactoryFunction: RebundleFactory = rebundleFactory): void {
   Promise.resolve()
-    .then(async () => {
+    .then(async() => {
       const config = await createConfig(options, host);
       const context = createContext(config, host, options);
       const cache = await readCache(context);

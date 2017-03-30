@@ -92,11 +92,11 @@ test.cb('DefaultHost#getModificationTime should return the mtime of the given fi
   }
 
   const file = resolve(process.cwd(), 'mtime-test.txt');
-  write(file, '0', async () => {
+  write(file, '0', async() => {
     try {
       const mtime1 = await (t.context.host as DefaultHost).getModificationTime(file);
       setTimeout(() => {
-        write(file, '1', async () => {
+        write(file, '1', async() => {
           try {
             const mtime2 = await (t.context.host as DefaultHost).getModificationTime(file);
             t.true(mtime2 > mtime1);
