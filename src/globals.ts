@@ -10,7 +10,7 @@ export interface DetectedGlobals {
   global: boolean;
   process: boolean;
   buffer: boolean;
-};
+}
 
 export function checkGlobalIdentifier(name: string, ast: ESTree.Program): boolean {
   let detectedGlobalIdentifier = false;
