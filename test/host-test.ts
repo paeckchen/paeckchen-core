@@ -82,7 +82,7 @@ test('DefaultHost#writeFile should dump the content to disk', t => {
 });
 
 test.cb('DefaultHost#getModificationTime should return the mtime of the given file',
-    (t: ava.CallbackTestContext & ava.Context<{host: DefaultHost;}>) => {
+    (t: ava.CallbackTestContext & ava.Context<{ host: DefaultHost; }>) => {
   function write(file: string, content: string, cb: () => void): void {
     writeFile(file, content, err => {
       if (err) {
