@@ -1,4 +1,4 @@
-import test from 'ava';
+import test, {CallbackTestContext, Context} from 'ava';
 import * as ESTree from 'estree';
 import { join } from 'path';
 
@@ -8,7 +8,7 @@ import { errorLogger, HostMock, virtualModule } from './helper';
 
 import { bundle, rebundleFactory, PaeckchenContext, BundleOptions } from '../src/bundle';
 
-test.cb('bundle should bundle the given entry-point and its dependencies', t => {
+test.cb('bundle should bundle the given entry-point and its dependencies', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     'entry-point.js': `
       import fn from './dependency';
@@ -41,7 +41,7 @@ test.cb('bundle should bundle the given entry-point and its dependencies', t => 
   });
 });
 
-test.cb('bundle should bundle global dependencies', t => {
+test.cb('bundle should bundle global dependencies', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     '/entry-point.js': `
       Buffer.isBuffer();
@@ -75,7 +75,7 @@ test.cb('bundle should bundle global dependencies', t => {
   });
 });
 
-test.cb('bundle should check for a config-file', t => {
+test.cb('bundle should check for a config-file', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     '/entry-point.js': `
       callback();
@@ -103,7 +103,7 @@ test.cb('bundle should check for a config-file', t => {
   });
 });
 
-test.cb('bundle should throw if no entry-point configured', t => {
+test.cb('bundle should throw if no entry-point configured', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     '/paeckchen.json': '{}'
   }, '/');
@@ -118,7 +118,8 @@ test.cb('bundle should throw if no entry-point configured', t => {
   });
 });
 
-test.cb('rebundleFactory should return a function which calls a bundle function on the end of the event loop', t => {
+test.cb('rebundleFactory should return a function which calls a bundle function on the end of the event loop',
+    (t: CallbackTestContext & Context<any>) => {
   const state = new State([]);
   const ast: any = {};
   const context: any = {
@@ -143,7 +144,7 @@ test.cb('rebundleFactory should return a function which calls a bundle function 
   }, 25);
 });
 
-test.cb('rebundleFactory should throw on error', t => {
+test.cb('rebundleFactory should throw on error', (t: CallbackTestContext & Context<any>) => {
   const state = new State([]);
   const ast: any = {};
   const context: any = {};
@@ -155,7 +156,8 @@ test.cb('rebundleFactory should throw on error', t => {
   rebundle();
 });
 
-test.cb('bundle should create a watch and a rebundle function when in watch mode', t => {
+test.cb('bundle should create a watch and a rebundle function when in watch mode',
+    (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     '/entry': ''
   }, '/');
@@ -182,7 +184,7 @@ test.cb('bundle should create a watch and a rebundle function when in watch mode
   bundle(config, host, outputFunction, bundleFunction, rebundleFactoryFunction);
 });
 
-test.cb('bundle with source maps should add mappings via sorcery', t => {
+test.cb('bundle with source maps should add mappings via sorcery', (t: CallbackTestContext & Context<any>) => {
   const paths = (list: string[]) => list.map(entry => entry.replace(/\\/g, '/'));
 
   const config: BundleOptions = {
@@ -204,7 +206,7 @@ test.cb('bundle with source maps should add mappings via sorcery', t => {
   });
 });
 
-test.cb('bundle should log on chunk error', t => {
+test.cb('bundle should log on chunk error', (t: CallbackTestContext & Context<any>) => {
   let errorLogged = false;
 
   const host = new HostMock({
@@ -240,7 +242,7 @@ test.cb('bundle should log on chunk error', t => {
   bundle(config, host, () => undefined);
 });
 
-test.cb('bundle should write state to cache if debug enabled', t => {
+test.cb('bundle should write state to cache if debug enabled', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     'main.js': ''
   });
@@ -261,7 +263,7 @@ test.cb('bundle should write state to cache if debug enabled', t => {
   bundle(config, host, outputFunction);
 });
 
-test.cb('bundle should restart from cache if available', t => {
+test.cb('bundle should restart from cache if available', (t: CallbackTestContext & Context<any>) => {
   const detectedGlobals = {
     global: true,
     buffer: true,
@@ -317,7 +319,7 @@ test.cb('bundle should restart from cache if available', t => {
   bundle(config, host, outputFunction, bundleFunction);
 });
 
-test.cb('bundle should throw if error during setup', t => {
+test.cb('bundle should throw if error during setup', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     'main.js': ''
   });
@@ -341,7 +343,7 @@ test.cb('bundle should throw if error during setup', t => {
   });
 });
 
-test.cb('bundle should add all files from cache to watcher if enabled', t => {
+test.cb('bundle should add all files from cache to watcher if enabled', (t: CallbackTestContext & Context<any>) => {
   const host = new HostMock({
     'main.js': '',
     'paeckchen.cache.json': `{
