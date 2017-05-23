@@ -28,7 +28,7 @@ test('save should return a serialized state object', t => {
 
 test('load should create and revalidate state from serialized state object', async t => {
   const host = new HostMock({
-    'name1': ''
+    name1: ''
   });
   host.getModificationTime = () => Promise.resolve(234);
   const state = new State([]);
