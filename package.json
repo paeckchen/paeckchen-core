@@ -60,7 +60,7 @@
     "standard-version": "4.0.0",
     "tipi-cli": "3.1.0",
     "tslint": "5.3.2",
-    "typescript": "2.3.3"
+    "typescript": "2.3.4"
   },
   "dependencies": {
     "@types/acorn": "~4.0.0",
