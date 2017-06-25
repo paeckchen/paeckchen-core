@@ -52,7 +52,7 @@
     "conventional-changelog-lint": "1.1.9",
     "coveralls": "2.13.1",
     "cz-customizable": "5.0.0",
-    "husky": "0.14.0",
+    "husky": "0.14.1",
     "lodash": "4.17.4",
     "nyc": "11.0.1",
     "rimraf": "2.6.1",
