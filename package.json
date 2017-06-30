@@ -44,7 +44,7 @@
     "@knisterpeter/standard-tslint": "^1.4.0",
     "@types/browser-resolve": "0.0.4",
     "@types/common-tags": "1.2.5",
-    "@types/lodash": "4.14.67",
+    "@types/lodash": "4.14.68",
     "@types/mkdirp": "0.3.29",
     "@types/node": "8.0.5",
     "ava": "0.20.0",
