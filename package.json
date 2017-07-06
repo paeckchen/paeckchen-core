@@ -46,7 +46,7 @@
     "@types/common-tags": "1.2.5",
     "@types/lodash": "4.14.68",
     "@types/mkdirp": "0.3.29",
-    "@types/node": "8.0.6",
+    "@types/node": "8.0.8",
     "ava": "0.20.0",
     "common-tags": "1.4.0",
     "conventional-changelog-lint": "1.1.9",
