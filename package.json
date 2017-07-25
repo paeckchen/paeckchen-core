@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@types/acorn": "~4.0.0",
-    "@types/chokidar": "~1.4.30",
+    "@types/chokidar": "~1.7.1",
     "@types/estree": "~0.0.34",
     "acorn": "4.0.10",
     "ast-types": "0.9.12",
