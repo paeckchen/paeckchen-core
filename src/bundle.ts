@@ -190,10 +190,10 @@ export function bundle(options: BundleOptions, host: Host = new DefaultHost(), o
       const modulePath = await getModulePath('.', absoluteEntryPath, context);
       enqueueModule(modulePath, state, context);
       if (context.config.watchMode) {
-        context.rebundle = rebundleFactoryFunction(state, paeckchenAst!, context, bundleFunction,
+        context.rebundle = rebundleFactoryFunction(state, paeckchenAst, context, bundleFunction,
           outputFunction);
       }
-      bundleFunction(state, paeckchenAst!, context, outputFunction);
+      bundleFunction(state, paeckchenAst, context, outputFunction);
     })
     .catch(error => {
       outputFunction(error, undefined);

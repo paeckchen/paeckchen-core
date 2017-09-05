@@ -66,7 +66,7 @@ function convertImport(tempIdentifier: ESTree.Identifier, specifier: ESTree.Impo
   }
   // e.g. import * as dep from './dep';
   return b.variableDeclarator(
-    b.identifier((specifier as ESTree.ImportNamespaceSpecifier).local.name),
+    b.identifier(specifier.local.name),
     b.memberExpression(
       tempIdentifier,
       b.identifier('exports'),

@@ -19,8 +19,8 @@ export async function rewriteRequireStatements(program: ESTree.Program, currentM
       // TODO: check binding here, not name
       if (n.Identifier.check(callee) && callee.name === 'require') {
         const importPath = path.node.arguments[0];
-        if (n.Literal.check(importPath) && (importPath as ESTree.Literal).value) {
-          const value = (importPath as ESTree.Literal).value;
+        if (n.Literal.check(importPath) && importPath.value) {
+          const value = importPath.value;
           if (value) {
             requireUpdates.push([value.toString(), path]);
           }
