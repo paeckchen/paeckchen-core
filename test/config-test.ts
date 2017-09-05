@@ -2,7 +2,7 @@ import test from 'ava';
 
 import { HostMock } from './helper';
 
-import { createConfig, Config, SourceSpec, Runtime, LogLevel } from '../src/config';
+import { createConfig, SourceSpec, Runtime, LogLevel } from '../src/config';
 
 test('createConfig should return the config defaults', async t => {
   const host = new HostMock({
@@ -27,7 +27,7 @@ test('createConfig should return the config defaults', async t => {
     watchMode: false,
     logLevel: LogLevel.default,
     debug: false
-  } as Config);
+  });
 });
 
 test('createConfig should prefer entry point of options', async t => {
@@ -189,7 +189,7 @@ test('createConfig should read alias from config file', async t => {
 
   const config = await createConfig({}, host);
 
-  t.deepEqual(config.aliases, {module: '/some/path'} as {[name: string]: string});
+  t.deepEqual(config.aliases, {module: '/some/path'});
 });
 
 test('createConfig should join single alias into config', async t => {

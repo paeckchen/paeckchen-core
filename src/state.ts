@@ -72,7 +72,7 @@ export class State {
         wrapped.ast = this.modules[entry.index];
         wrappedModules[entry.name] = wrapped;
         return wrappedModules;
-      }, {}) as any;
+      }, {});
     this._nextModuleIndex = data.nextModuleIndex;
     await this.revalidate(context, updateModuleFn, enqueueModuleFn);
   }
