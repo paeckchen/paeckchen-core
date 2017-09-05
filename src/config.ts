@@ -86,7 +86,7 @@ function getSourceMap(input: boolean|'inline'): boolean|'inline' {
 }
 
 function processKeyValueOption<V>(list: string|string[]|undefined, config: {[key: string]: V}): {[key: string]: V} {
-  let map = config || {} as {[key: string]: V};
+  let map: {[key: string]: V} = config || {};
   if (list && list.length > 0) {
     const split = (alias: string) => alias.split('=');
     const assign = (object: {[key: string]: V}, input: string) => {
