@@ -59,7 +59,7 @@
     "source-map-support": "0.5.0",
     "standard-version": "4.3.0",
     "tipi-cli": "3.1.0",
-    "tslint": "5.8.0",
+    "tslint": "5.9.0",
     "typescript": "2.5.3"
   },
   "dependencies": {
