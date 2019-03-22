@@ -69,7 +69,7 @@
     "acorn": "4.0.10",
     "ast-types": "0.11.4",
     "browser-resolve": "1.11.3",
-    "chokidar": "2.0.3",
+    "chokidar": "2.1.4",
     "escodegen": "1.10.0",
     "mkdirp": "0.5.1",
     "node-libs-browser": "2.1.0",
