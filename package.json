@@ -67,7 +67,7 @@
     "@types/chokidar": "~1.4.30",
     "@types/estree": "~0.0.34",
     "acorn": "4.0.10",
-    "ast-types": "0.11.4",
+    "ast-types": "0.13.1",
     "browser-resolve": "1.11.3",
     "chokidar": "2.0.3",
     "escodegen": "1.10.0",
