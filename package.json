@@ -72,7 +72,7 @@
     "chokidar": "2.0.3",
     "escodegen": "1.10.0",
     "mkdirp": "0.5.1",
-    "node-libs-browser": "2.1.0",
+    "node-libs-browser": "2.2.1",
     "paeckchen-sorcery": "0.1.1"
   },
   "config": {
