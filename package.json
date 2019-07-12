@@ -50,7 +50,7 @@
     "ava": "0.25.0",
     "common-tags": "1.8.0",
     "conventional-changelog-lint": "2.0.0",
-    "coveralls": "2.13.2",
+    "coveralls": "3.0.5",
     "cz-customizable": "5.2.0",
     "husky": "0.15.0-beta.2",
     "lodash": "4.17.9",
